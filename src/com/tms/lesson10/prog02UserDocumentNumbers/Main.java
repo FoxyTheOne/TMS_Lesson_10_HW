@@ -27,25 +27,28 @@ public class Main {
     public static void main(String[] args) {
         ArrayList<String> pathToFileArray = new ArrayList<>(); // Коллекция, куда далее будут записываться введенные пути к файлам
 
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Введите путь к файлу с номерами документов, включая имя файла: ");
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.print("Введите путь к файлу с номерами документов, включая имя файла: ");
 
-        String stop = "0";
-        while (sc.hasNext()) {
-            String str = sc.nextLine();
-            if (str.equals(stop)) {
-                break;
-            } else {
-                System.out.println();
-                System.out.println("Для завершения ввода списка файлов введите 0.");
-                System.out.print("Введите путь к файлу с номерами документов, включая имя файла: ");
+            String stop = "0";
+            while (sc.hasNext()) {
+                String str = sc.nextLine();
+                if (str.equals(stop)) {
+                    break;
+                } else {
+                    System.out.println();
+                    System.out.println("Для завершения ввода списка файлов введите 0.");
+                    System.out.print("Введите путь к файлу с номерами документов, включая имя файла: ");
+                }
+                pathToFileArray.add(str); // Добавляем строку в коллекцию
             }
-            pathToFileArray.add(str); // Добавляем строку в коллекцию
+            System.out.println("Ввод списка файлов завершён.");
+            System.out.println();
+            System.out.println("Идёт обработка...");
+            System.out.println();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
-        System.out.println("Ввод списка файлов завершён.");
-        System.out.println();
-        System.out.println("Идёт обработка...");
-        System.out.println();
 
         String pathForFinalReport = "C:\\java\\TeachMeSkills\\TMS_Lesson_10_HW\\FinalReport.txt";
 
@@ -91,9 +94,9 @@ public class Main {
     public static String checkDocNumberReturnComment(String docNumber) {
         StringBuilder commentBuilder = new StringBuilder();
 
-        boolean check1 = DocumentCheck.numberLength15(docNumber);
-        boolean check2 = DocumentCheck.onlyNumAndLetter(docNumber);
-        boolean check3 = DocumentCheck.beginsWithDocnumOrKontract(docNumber);
+        boolean check1 = DocumentChecker.numberLength15(docNumber);
+        boolean check2 = DocumentChecker.onlyNumAndLetter(docNumber);
+        boolean check3 = DocumentChecker.beginsWithDocnumOrKontract(docNumber);
 
         if (check1 && check2 && check3) {
             commentBuilder.append("Валидный номер документа.");

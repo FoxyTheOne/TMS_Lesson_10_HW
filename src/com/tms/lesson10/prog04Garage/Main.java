@@ -1,11 +1,11 @@
 package com.tms.lesson10.prog04Garage;
 
-import com.tms.lesson10.prog04Garage.garage.Car;
+import com.tms.lesson10.prog04Garage.car.Car;
 import com.tms.lesson10.prog04Garage.garage.Garage;
-import com.tms.lesson10.prog04Garage.garage.lexus.Lexus;
-import com.tms.lesson10.prog04Garage.garage.ford.Ford;
-import com.tms.lesson10.prog04Garage.garage.toyota.Toyota;
-import com.tms.lesson10.prog04Garage.garage.volkswagen.Volkswagen;
+import com.tms.lesson10.prog04Garage.car.lexus.Lexus;
+import com.tms.lesson10.prog04Garage.car.ford.Ford;
+import com.tms.lesson10.prog04Garage.car.toyota.Toyota;
+import com.tms.lesson10.prog04Garage.car.volkswagen.Volkswagen;
 
 /**
  * Продемонстрировать работу гаража.

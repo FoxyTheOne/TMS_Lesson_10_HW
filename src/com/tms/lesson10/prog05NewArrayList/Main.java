@@ -1,5 +1,7 @@
 package com.tms.lesson10.prog05NewArrayList;
 
+import com.tms.lesson10.prog05NewArrayList.myArrayList.MyArrayList;
+
 public class Main {
     public static void main(String[] args) {
         try {

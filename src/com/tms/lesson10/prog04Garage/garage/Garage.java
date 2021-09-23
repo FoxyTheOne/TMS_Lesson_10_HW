@@ -1,5 +1,7 @@
 package com.tms.lesson10.prog04Garage.garage;
 
+import com.tms.lesson10.prog04Garage.car.Car;
+
 import java.util.HashMap;
 import java.util.Map;
 
